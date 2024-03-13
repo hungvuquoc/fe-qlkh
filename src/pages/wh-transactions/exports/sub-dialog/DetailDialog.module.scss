@@ -1,0 +1,257 @@
+@import '../../../../Common.module';
+
+$dialog-content_padding-width: 50px;
+$dialog-content_padding-height: 30px;
+$dialog-content_width: 752px;
+
+.dialog-container {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+
+  .dialog-content {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% - $dialog-content_padding-width), calc(-50% - $dialog-content_padding-height));
+
+    max-width: $dialog-content_width;
+    width: calc(100% - calc($dialog-content_padding-width * 2));
+    height: calc(100% - calc($dialog-content_padding-height * 2));
+
+    margin-left: $dialog-content_padding-width;
+    margin-right: $dialog-content_padding-width;
+    margin-top: $dialog-content_padding-height;
+    margin-bottom: $dialog-content_padding-height;
+
+    border-radius: 6px;
+
+    .modal-content {
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      padding: 5px;
+
+      display: flex;
+      flex-direction: column;
+
+      .modal-header {
+        color: rgb(219, 219, 219);
+        min-height: 23px;
+
+        .close {
+          color: rgb(219, 219, 219);
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+          line-height: 1;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+
+      .modal-body {
+        width: 100%;
+        height: calc(100% - 5px);
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+
+        .view-table {
+          flex: 1;
+          border-radius: 5px;
+          overflow: auto;
+
+          border: 1px solid $colorGray_2;
+
+          .table {
+            font-size: small;
+            table-layout: fixed;
+            width: fit-content;
+            border-collapse: collapse;
+            text-align: center;
+
+            position: relative;
+            .header {
+              position: sticky;
+              top: 0;
+            }
+
+            tr {
+              border-bottom: 1px solid $colorBorder;
+
+              td,
+              th {
+                height: 38px;
+                border-left: 1px solid $colorBorder;
+
+                &:first-child {
+                  border-left: 0px;
+                }
+              }
+
+              .col-header {
+                background-color: $colorDefault;
+                color: $colorWhite;
+              }
+
+              .stt {
+                width: 60px;
+              }
+
+              .selected {
+                width: 70px;
+
+                input {
+                  width: 17px;
+                  height: 17px;
+                  box-sizing: border-box;
+                }
+              }
+
+              .floor-name {
+                width: 150px;
+              }
+
+              .input-date {
+                width: 160px;
+              }
+
+              .quantity-target {
+                width: 150px;
+              }
+
+              .quantity {
+                width: 150px;
+
+                input {
+                  width: 100%;
+                  outline: none;
+                  border: none;
+                  background: none;
+                  padding-left: 5px;
+                }
+              }
+
+              .col-body-left {
+                text-align: left;
+                padding-left: 5px;
+              }
+            }
+
+            .class-row {
+              background-color: $colorRow;
+            }
+          }
+
+          //   .column-fit {
+          //     min-height: fit-content;
+          //   }
+
+          //   .stt {
+          //     width: 50px;
+          //   }
+
+          //   .selected {
+          //     width: 70px;
+
+          //     input {
+          //       width: fit-content;
+          //     }
+          //   }
+
+          //   .floor-name {
+          //     width: 150px;
+          //   }
+
+          //   .input-date {
+          //     width: 160px;
+          //   }
+
+          //   .quantity-target {
+          //     width: 150px;
+          //   }
+
+          //   .quantity {
+          //     width: 150px;
+          //   }
+
+          //   td.quantity {
+          //     padding: 0 0 0 5px;
+          //   }
+        }
+      }
+
+      .modal-footer {
+        padding: 2px;
+        color: white;
+        height: 40px;
+
+        .body__action {
+          height: 100%;
+
+          position: relative;
+        }
+
+        .body__action--btn-save {
+          position: absolute;
+          bottom: 0;
+
+          left: 50%;
+          transform: translate(-50%);
+
+          background-color: #0b5ed7;
+          padding: 5px 20px;
+          border-radius: 3px;
+          border: none;
+          color: white;
+        }
+
+        .body__action--btn-save:hover {
+          background-color: #0b49a5;
+          transition: all 0.5s;
+        }
+      }
+    }
+  }
+}
+
+// start hiệu ứng cho dialog
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

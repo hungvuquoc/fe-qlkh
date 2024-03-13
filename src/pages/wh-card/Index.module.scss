@@ -1,0 +1,219 @@
+.main-container {
+  .search-container {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 10px;
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      margin-left: 10px;
+
+      input {
+        height: 30px;
+      }
+
+      select {
+        height: 30px;
+      }
+    }
+  }
+
+  .card-container {
+    margin: 0 10px 10px 10px;
+    border-radius: 5px;
+    background-color: white;
+
+    .view-title {
+      padding: 30px;
+
+      .input-container {
+        display: flex;
+        min-width: 250px;
+        gap: 4px;
+
+        .input-title {
+          width: fit-content;
+          margin: 0px 0px -2px;
+          padding-top: 16px;
+        }
+
+        .input-content {
+          display: flex;
+          flex: 1 1 0%;
+          align-items: flex-end;
+          width: 100%;
+          margin: 0px;
+          font-weight: bold;
+          border-bottom: 1px dotted black;
+          line-height: calc(100% - 2px);
+        }
+      }
+
+      .title-top {
+        display: flex;
+        justify-content: space-between;
+
+        .left {
+          font-weight: bold;
+        }
+
+        .right {
+          text-align: center;
+          width: 30%;
+
+          .main {
+            margin-block: 0px;
+            font-weight: bold;
+          }
+
+          .secondary {
+            margin-block: 0px;
+            font-style: italic;
+            font-size: 13px;
+          }
+        }
+      }
+
+      .title-center {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+          margin-block: 0px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+
+        .input-container {
+          font-size: small;
+          width: 270px;
+        }
+
+        .input-content {
+          font-size: small;
+          font-weight: bold;
+        }
+      }
+
+      .title-bottom {
+        padding: 0 30px;
+        .input-container {
+          font-size: small;
+        }
+
+        .input-content {
+          font-size: small;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .view-table {
+      width: 1093px;
+      overflow: auto;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        table-layout: fixed;
+        width: fit-content;
+        text-align: center;
+        font-size: small;
+
+        tr {
+          border: 1px solid #000000;
+
+          td,
+          th {
+            margin: 0;
+            padding: 7px;
+            border-right: 1px solid #000000;
+            &:first-child {
+              border-left: 0px;
+            }
+          }
+
+          .stt {
+            width: 60px;
+          }
+
+          .create-date {
+            width: 120px;
+          }
+
+          .code {
+            width: 300px;
+          }
+
+          .in-code,
+          .out-code {
+            width: 150px;
+          }
+
+          .input-date {
+            width: 120px;
+          }
+
+          .note {
+            width: 80px;
+          }
+
+          .quantity {
+            width: 150px;
+          }
+
+          .signature {
+            width: 200px;
+          }
+        }
+      }
+    }
+
+    .view-footer {
+      font-size: small;
+      .footer-page {
+        margin: 0 30px;
+
+        .input-container {
+          display: flex;
+          width: 250px;
+          gap: 4px;
+
+          .input-title {
+            width: fit-content;
+            margin: 0px 0px -2px;
+            padding-top: 16px;
+          }
+
+          .input-content {
+            display: flex;
+            flex: 1 1 0%;
+            align-items: flex-end;
+            width: 100%;
+            margin: 0px;
+            font-weight: bold;
+            border-bottom: 1px dotted black;
+            line-height: calc(100% - 2px);
+          }
+        }
+      }
+    }
+  }
+
+  .pagination {
+    padding: 10px;
+
+    .action {
+      margin-left: auto;
+      right: 0;
+      width: fit-content;
+    }
+  }
+}

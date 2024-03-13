@@ -1,0 +1,142 @@
+@import '../../Common.module';
+
+$dialog-content_padding-width: 50px;
+$dialog-content_padding-height: 30px;
+$modal-body_container_width: 600px;
+$modal-body_container_height: 300px;
+
+.dialog-container {
+  position: fixed;
+  z-index: 8;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+
+  .dialog-content {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% - $dialog-content_padding-width), calc(-50% - $dialog-content_padding-height));
+
+    width: $modal-body_container_width;
+    height: $modal-body_container_height;
+
+    margin-left: $dialog-content_padding-width;
+    margin-right: $dialog-content_padding-width;
+    margin-top: $dialog-content_padding-height;
+    margin-bottom: $dialog-content_padding-height;
+
+    border-radius: 6px;
+
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      color: rgb(219, 219, 219);
+      min-height: 23px;
+      margin-bottom: 5px;
+
+      .close {
+        color: rgb(219, 219, 219);
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        line-height: 1;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+
+    .footer {
+      height: 50px;
+
+      position: relative;
+
+      .body__action {
+        width: fit-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .body__action--btn-save {
+          background-color: #0b5ed7;
+          padding: 5px 20px;
+          border-radius: 3px;
+          border: none;
+          color: white;
+        }
+
+        .body__action--btn-save:hover {
+          background-color: #0b49a5;
+          transition: all 0.5s;
+        }
+      }
+    }
+
+    .body {
+      flex: 1;
+
+      .item-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .input-container {
+          display: flex;
+          flex-direction: column;
+          width: 250px;
+          margin-bottom: 10px;
+
+          label {
+            font-size: small;
+          }
+
+          input {
+            height: 27px;
+          }
+
+          select {
+            height: 27px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

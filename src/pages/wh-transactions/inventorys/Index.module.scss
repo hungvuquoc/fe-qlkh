@@ -1,0 +1,121 @@
+:root {
+  --action__height: 50px;
+}
+
+.action {
+  box-sizing: border-box;
+  height: var(--action__height);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-sizing: border-box;
+  padding: 0 20px;
+
+  .button-add {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 15px;
+    font-weight: 550;
+    :hover {
+      background-color: #006ee4;
+    }
+  }
+}
+
+.view {
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.view-table {
+  height: 500px;
+  border-radius: 5px;
+  width: 1093px;
+  overflow: auto;
+
+  border: 1px solid #dddcdc;
+
+  .table {
+    table-layout: fixed;
+    width: fit-content;
+    border-collapse: collapse;
+    text-align: center;
+
+    position: relative;
+    .header {
+      position: sticky;
+      top: 0;
+    }
+
+    tr {
+      border-bottom: 1px solid #dddcdc;
+
+      td,
+      th {
+        padding: 10px;
+        border-left: 1px solid #dddcdc;
+        &:first-child {
+          border-left: 0px;
+        }
+      }
+
+      .col-header {
+        background-color: #f2f2f2;
+        color: #333;
+      }
+
+      .stt {
+        width: 60px;
+      }
+
+      .code {
+        width: 200px;
+      }
+
+      .warehouse-name {
+        width: 200px;
+      }
+
+      .create-date {
+        width: 120px;
+      }
+
+      .input-date {
+        width: 120px;
+      }
+
+      .note {
+        width: 250px;
+      }
+
+      .status {
+        width: 200px;
+      }
+
+      .row-action {
+        width: 200px;
+      }
+
+      .row-action.finish {
+        width: 260px;
+      }
+    }
+  }
+}
+
+.view-pagination {
+  margin-top: 5px;
+  text-align: right;
+  // background-color: #ddd;
+  // border-radius: 5px;
+  .view-pagination__action {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 5px;
+  }
+}

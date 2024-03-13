@@ -1,0 +1,223 @@
+@import '../../../Common.module';
+
+$dialog-content_padding-width: 50px;
+$dialog-content_padding-height: 30px;
+$modal-body_container_width: 800px;
+
+.dialog-container {
+  position: fixed;
+  z-index: 8;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+
+  .dialog-content {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% - $dialog-content_padding-width), calc(-50% - $dialog-content_padding-height));
+
+    max-width: $modal-body_container_width;
+    width: calc(100% - calc($dialog-content_padding-width * 2));
+    height: calc(100% - calc($dialog-content_padding-height * 2));
+
+    margin-left: $dialog-content_padding-width;
+    margin-right: $dialog-content_padding-width;
+    margin-top: $dialog-content_padding-height;
+    margin-bottom: $dialog-content_padding-height;
+
+    border-radius: 6px;
+
+    .modal-content {
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      padding: 5px;
+
+      display: flex;
+      flex-direction: column;
+
+      .modal-header {
+        color: rgb(219, 219, 219);
+        min-height: 23px;
+
+        .close {
+          color: rgb(219, 219, 219);
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+          line-height: 1;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: $colorBlack;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+
+      .modal-body {
+        box-sizing: border-box;
+        border-radius: 4px;
+        flex: 1;
+        overflow: auto;
+
+        .body_search {
+          margin-bottom: 10px;
+
+          .button-search {
+            margin-left: 10px;
+          }
+        }
+
+        .body_table {
+          border-radius: 5px;
+          border: 1px solid $colorBorder;
+          overflow: auto;
+
+          .table {
+            font-size: small;
+            table-layout: fixed;
+            width: fit-content;
+            border-collapse: collapse;
+            text-align: center;
+
+            position: relative;
+            .header {
+              position: sticky;
+              top: 0;
+            }
+
+            tr {
+              border-bottom: 1px solid $colorBorder;
+
+              td,
+              th {
+                height: 38px;
+                border-left: 1px solid $colorBorder;
+
+                &:first-child {
+                  border-left: 0px;
+                }
+              }
+
+              .col-header {
+                background-color: $colorDefault;
+                color: $colorWhite;
+              }
+
+              .stt {
+                width: 60px;
+              }
+
+              .code {
+                width: 150px;
+              }
+
+              .name {
+                width: 250px;
+              }
+
+              .checked {
+                width: 70px;
+              }
+
+              .deleted-body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+
+              .deleted {
+                width: 160px;
+              }
+
+              .col-body-left {
+                text-align: left;
+                padding-left: 5px;
+              }
+            }
+
+            .class-row {
+              background-color: $colorRow;
+            }
+
+            .deleted-false {
+              background-color: $colorOrange;
+              padding: 2px 7px;
+              width: 100px;
+              border-radius: 5px;
+              color: $colorWhite;
+              font-weight: 500;
+            }
+
+            .deleted-true {
+              background-color: $colorGreen;
+              padding: 2px 7px;
+              width: 100px;
+              border-radius: 5px;
+              color: $colorWhite;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+
+      .modal-footer {
+        padding: 2px 16px;
+        color: $colorWhite;
+        height: 50px;
+
+        .body__action {
+          padding: 10px 0;
+          text-align: center;
+
+          .body__action--btn-save {
+            background-color: $colorDefault;
+            padding: 5px 20px;
+            border-radius: 3px;
+            border: none;
+            color: $colorWhite;
+          }
+
+          .body__action--btn-save:hover {
+            background-color: $colorHover;
+            transition: all 0.5s;
+          }
+        }
+      }
+    }
+  }
+}
+
+// start hiệu ứng cho dialog
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

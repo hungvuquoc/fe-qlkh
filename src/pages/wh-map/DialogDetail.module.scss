@@ -1,0 +1,196 @@
+@import '../../Common.module';
+
+$dialog-width: 900px;
+$dialog-height: 450px;
+$dialog-content_padding-width: 50px;
+$dialog-content_padding-height: 30px;
+$body_container-image_min-width: 160px;
+$body_container-form_min-width: 300px;
+$product-modal-body_container_min-width: calc($body_container-image_min-width + $body_container-form_min-width);
+
+.dialog-container {
+  position: fixed;
+  z-index: 8;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+
+  .dialog-content {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% - $dialog-content_padding-width), calc(-50% - $dialog-content_padding-height));
+
+    max-width: $dialog-width;
+    max-height: $dialog-height;
+    width: calc(100% - calc($dialog-content_padding-width * 2));
+    height: calc(100% - calc($dialog-content_padding-height * 2));
+
+    margin-left: $dialog-content_padding-width;
+    margin-right: $dialog-content_padding-width;
+    margin-top: $dialog-content_padding-height;
+    margin-bottom: $dialog-content_padding-height;
+
+    border-radius: 6px;
+
+    .modal-content {
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      border-radius: 6px;
+      padding: 5px;
+
+      display: flex;
+      flex-direction: column;
+
+      .modal-header {
+        color: rgb(219, 219, 219);
+        min-height: 23px;
+
+        .close {
+          color: rgb(219, 219, 219);
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+          line-height: 1;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+
+      .modal-body {
+        height: 100%;
+        overflow: auto;
+        box-sizing: border-box;
+        border-radius: 4px;
+
+        display: flex;
+        flex-direction: column;
+
+        .view-table {
+          flex: 1;
+          overflow: auto;
+
+          border-radius: 3px;
+          border: 1px solid $colorBorder;
+
+          .table {
+            font-size: small;
+            table-layout: fixed;
+            width: fit-content;
+            border-collapse: collapse;
+            text-align: center;
+
+            position: relative;
+            .header {
+              position: sticky;
+              top: 0;
+            }
+
+            tr {
+              border-bottom: 1px solid $colorBorder;
+
+              td,
+              th {
+                height: 38px;
+                border-left: 1px solid $colorBorder;
+
+                &:first-child {
+                  border-left: 0px;
+                }
+              }
+
+              .col-header {
+                background-color: $colorDefault;
+                color: $colorWhite;
+              }
+
+              .stt {
+                width: 50px;
+              }
+
+              .floor-name {
+                width: 150px;
+              }
+
+              .product-name {
+                width: 230px;
+              }
+
+              .product-detail-name {
+                width: 230px;
+              }
+
+              .product-unit-name {
+                width: 230px;
+              }
+
+              .input-date {
+                width: 150px;
+              }
+
+              .quantity {
+                width: 100px;
+              }
+
+              .col-body-left {
+                text-align: left;
+                padding-left: 5px;
+              }
+            }
+
+            .class-row {
+              background-color: $colorRow;
+            }
+          }
+        }
+
+        .view-pagination {
+          margin-top: 5px;
+          text-align: right;
+
+          .view-pagination__action {
+            display: inline-block;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+  }
+}
+
+// start hiệu ứng cho dialog
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+// end hiệu ứng dialog

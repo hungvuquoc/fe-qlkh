@@ -1,0 +1,122 @@
+.main-container {
+  .search-container {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 10px;
+
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      margin-left: 10px;
+
+      input {
+        height: 30px;
+      }
+
+      select {
+        height: 30px;
+      }
+    }
+  }
+
+  .report-container {
+    margin: 0 10px 10px 10px;
+    border-radius: 5px;
+    background-color: white;
+
+    .view-title {
+      text-align: center;
+      padding: 30px 0;
+
+      span {
+        font-size: small;
+        font-style: italic;
+      }
+    }
+
+    .view-table {
+      width: 1093px;
+      min-height: 400px;
+      overflow: auto;
+      padding: 10px;
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        table-layout: fixed;
+        width: fit-content;
+        text-align: center;
+        font-size: small;
+
+        tr {
+          border: 1px solid #000000;
+
+          td,
+          th {
+            margin: 0;
+            padding: 7px;
+            border-right: 1px solid #000000;
+            &:first-child {
+              border-left: 0px;
+            }
+          }
+
+          .stt {
+            width: 50px;
+          }
+
+          .product-code {
+            width: 150px;
+          }
+
+          .product-name {
+            width: 150px;
+          }
+
+          .consignment-number {
+            width: 100px;
+          }
+
+          .unit-name {
+            width: 50px;
+          }
+
+          .start-stock {
+            width: 150px;
+          }
+
+          .in_ {
+            width: 150px;
+          }
+
+          .out_ {
+            width: 200px;
+          }
+
+          .end-stock {
+            width: 200px;
+          }
+
+          .quantity {
+            width: 70px;
+          }
+
+          .cost {
+            width: 130px;
+          }
+        }
+      }
+    }
+
+    .view-pagination {
+      padding: 10px;
+
+      .action {
+        margin-left: auto;
+        right: 0;
+        width: fit-content;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+$colorDefault: #3949ab;
+$colorWhite: #ffffff;
+$colorBackgroundMain: #e8eaf6;
+$colorHover: #606cb6;
+$colorBorder: #dddcdc;
+$colorRow: #eeeeee;
+$colorOrange: #ff9430;
+$colorOrangeBackground: #fff4ea;
+$colorGreen: #43b54d;
+$colorBlack: black;
+$colorRed_1: rgb(253, 174, 174);
+$colorGray_1: rgb(219, 219, 219);
+$colorGray_2: rgb(124, 147, 156);
+
+$cell_status_0: #ffffff;
+$cell_status_1: rgb(247, 247, 189);
+$cell_status_2: rgb(132, 221, 132);
+$cell_status_3: rgb(129, 76, 253);
+
+.button-add {
+  min-height: 30px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: $colorDefault;
+  color: $colorWhite;
+  font-size: small;
+  font-weight: 550;
+  &:hover {
+    background-color: $colorHover;
+  }
+}
+
+.input-search {
+  height: 30px;
+  width: 200px;
+}
+
+.button-search {
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid $colorDefault;
+  border-radius: 3px;
+  background-color: $colorBackgroundMain;
+  color: $colorDefault;
+  font-size: small;
+  font-weight: 550;
+  &:hover {
+    color: $colorWhite;
+    background-color: $colorDefault;
+  }
+}
+
+.error {
+  font-size: 11px;
+  width: 100%;
+  color: red;
+  font-style: italic;
+}

@@ -1,0 +1,132 @@
+@import '../../Common.module';
+
+$actionHeight: 50px;
+
+.container {
+  max-width: 1110px;
+}
+
+.action {
+  margin-top: 25px;
+  box-sizing: border-box;
+  height: $actionHeight;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-sizing: border-box;
+  padding: 0 20px;
+
+  .search {
+    display: flex;
+    justify-content: space-between;
+    width: 290px;
+  }
+}
+
+.view {
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.view-table {
+  background-color: $colorWhite;
+  height: 500px;
+
+  overflow: auto;
+  border-radius: 5px;
+  border: 1px solid $colorBorder;
+
+  .table {
+    font-size: small;
+    table-layout: fixed;
+    width: fit-content;
+    border-collapse: collapse;
+    text-align: center;
+
+    position: relative;
+    .header {
+      position: sticky;
+      top: 0;
+    }
+
+    tr {
+      border-bottom: 1px solid $colorBorder;
+
+      td,
+      th {
+        height: 38px;
+        border-left: 1px solid $colorBorder;
+
+        &:first-child {
+          border-left: 0px;
+        }
+      }
+
+      .col-header {
+        background-color: $colorDefault;
+        color: $colorWhite;
+      }
+
+      .stt {
+        width: 50px;
+      }
+
+      .name {
+        width: 200px;
+      }
+
+      .description {
+        width: 200px;
+      }
+
+      .warhouse-name {
+        width: 180px;
+      }
+      .row-action {
+        width: 200px;
+
+        .button-search {
+          height: 23px;
+          margin-left: 10px;
+        }
+
+        :first-child {
+          margin-left: 0px;
+        }
+
+        .button-delete {
+          background-color: $colorOrangeBackground;
+          border: 1px solid $colorOrange;
+          color: $colorOrange;
+
+          &:hover {
+            background-color: $colorOrange;
+            color: $colorWhite;
+          }
+        }
+      }
+
+      .col-body-left {
+        text-align: left;
+        padding-left: 5px;
+      }
+    }
+
+    .class-row {
+      background-color: $colorRow;
+    }
+  }
+}
+
+.view-pagination {
+  margin-top: 5px;
+  text-align: right;
+
+  .view-pagination__action {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 5px;
+  }
+}

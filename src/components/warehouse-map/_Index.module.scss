@@ -1,0 +1,37 @@
+.modal-body__main-content {
+  margin: 0 5px 0 5px;
+  width: 100%;
+  height: 100%;
+  .main-content__view {
+    background-color: #f0eeee;
+    margin-bottom: 5px;
+    height: 100%;
+    border-radius: 5px;
+    overflow: auto;
+    table {
+      border-collapse: collapse;
+      border: 1px solid black;
+      margin: 20px;
+      td {
+        border: 1px solid black;
+        font-size: 13px;
+        text-align: center;
+        min-width: 50px;
+        height: 50px;
+        cursor: pointer;
+      }
+
+      .has-product {
+        background-color: rgb(247, 247, 189);
+      }
+
+      .has-product-search {
+        background-color: rgb(132, 221, 132);
+      }
+
+      .has-export {
+        background-color: rgb(129, 76, 253);
+      }
+    }
+  }
+}

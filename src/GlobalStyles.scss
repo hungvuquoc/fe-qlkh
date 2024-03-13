@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Chọn thanh cuộn theo chiều ngang */
+// ::-webkit-scrollbar {
+//   width: 0px; /* Điều chỉnh chiều rộng của thanh cuộn ngang */
+// }
+
+// /* Chọn thanh cuộn theo chiều dọc */
+// ::-webkit-scrollbar-thumb {
+//   width: 0px;
+//   border-radius: 0px; /* Bo góc của thanh cuộn */
+// }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+  background-color: #c7c7c7;
+  border-end-end-radius: 3px;
+  border-end-start-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(160, 160, 160);
+  border-radius: 3px;
+}

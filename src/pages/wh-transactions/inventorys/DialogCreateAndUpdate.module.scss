@@ -1,0 +1,319 @@
+@import '../../../components/input-field-v2/Index.module';
+
+:root {
+  --dialog-content_padding-width: 50px;
+  --dialog-content_padding-height: 30px;
+  --modal-content_margin: 5px;
+  --dialog-content_width: 1400px;
+  --modal-body_container_min-width: var(--dialog-content_width);
+}
+
+.dialog-container {
+  position: fixed;
+  z-index: 8;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+.dialog-content {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(
+    calc(-50% - var(--dialog-content_padding-width)),
+    calc(-50% - var(--dialog-content_padding-height))
+  );
+
+  width: var(--dialog-content_width);
+  width: calc(100% - calc(var(--dialog-content_padding-width) * 2));
+  height: calc(100% - calc(var(--dialog-content_padding-height) * 2));
+
+  margin-left: var(--dialog-content_padding-width);
+  margin-right: var(--dialog-content_padding-width);
+  margin-top: var(--dialog-content_padding-height);
+  margin-bottom: var(--dialog-content_padding-height);
+
+  border-radius: 6px;
+}
+
+// start hiệu ứng cho dialog
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+// end hiệu ứng dialog
+
+.modal-content {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  padding: 5px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  color: rgb(219, 219, 219);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  color: rgb(219, 219, 219);
+  min-height: 23px;
+}
+
+.modal-footer {
+  padding: 2px;
+  color: white;
+  height: 40px;
+}
+
+.error {
+  width: 100%;
+  color: red;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.body__action {
+  height: 100%;
+
+  position: relative;
+}
+
+.body__action--btn-save {
+  position: absolute;
+  bottom: 0;
+
+  left: 50%;
+  transform: translate(-50%);
+
+  background-color: #0b5ed7;
+  padding: 5px 20px;
+  border-radius: 3px;
+  border: none;
+  color: white;
+}
+
+.body__action--btn-save:hover {
+  background-color: #0b49a5;
+  transition: all 0.5s;
+}
+
+// body
+.modal-body {
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: auto;
+}
+
+////
+////
+////
+////
+
+.modal-body_container {
+  display: flex;
+
+  overflow: auto;
+}
+
+////
+////
+////
+////
+
+.tab-container {
+  background-color: #ddd;
+  width: 100%;
+
+  display: flex;
+  height: fit-content;
+}
+
+.tab {
+  width: fit-content;
+  padding: 10px;
+
+  color: #a7a7a7;
+
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: #0b5ed7;
+}
+
+.active-tab {
+  color: #0b49a5;
+  position: relative;
+}
+
+.active-tab::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%);
+  width: calc(100%);
+  height: 2px;
+  background-color: #0b49a5;
+}
+
+.content-tabs {
+  flex: 1;
+
+  overflow: auto;
+}
+
+.content {
+  // background-color: aqua;
+  display: none;
+  height: 100%;
+}
+
+.active-content {
+  display: block;
+}
+
+///
+///
+///
+.body_container-form_item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+///
+///
+///
+
+// @import '../../../components/table-v3/TableV3.module';
+
+.view-table {
+  margin: 5px 5px 0 5px;
+  box-sizing: border-box;
+
+  height: fit-content;
+  overflow: auto;
+  border-radius: 5px;
+  border: 1px solid #dddcdc;
+
+  .table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: small;
+
+    position: relative;
+    .header {
+      position: sticky;
+      top: 0;
+    }
+
+    tr {
+      border-bottom: 1px solid #dddcdc;
+
+      td,
+      th {
+        padding: 3px;
+        border-left: 1px solid #8d8d8d;
+        &:first-child {
+          border-left: 0px;
+        }
+      }
+
+      .col-header {
+        background-color: #f2f2f2;
+        color: #333;
+      }
+
+      .stt {
+        width: 60px;
+      }
+
+      .consignment-number {
+        min-width: 170px;
+      }
+
+      .product-name {
+        min-width: 250px;
+      }
+
+      .product-detail {
+        min-width: 250px;
+      }
+
+      .unit-check-name {
+        min-width: 250px;
+      }
+
+      .quantity-fake {
+        min-width: 100px;
+      }
+
+      .quantity-real {
+        min-width: 100px;
+      }
+
+      .calculate {
+        min-width: 100px;
+      }
+
+      .action {
+        min-width: 150px;
+      }
+    }
+  }
+}
+
+.btn-add-item {
+  margin-left: 5px;
+  margin-top: 20px;
+  padding: 0 5px;
+}

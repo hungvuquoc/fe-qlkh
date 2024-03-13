@@ -1,0 +1,106 @@
+@import '../../Common.module';
+
+.container {
+  min-width: 600px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 20px 10px 10px 10px;
+  border-radius: 3px;
+  font-size: small;
+
+  .action {
+    font-size: 15px;
+    .tab-container {
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+      background-color: $colorWhite;
+      min-height: 40px;
+      width: 100%;
+
+      display: flex;
+      height: fit-content;
+    }
+
+    .tab {
+      width: fit-content;
+      padding: 10px 15px;
+
+      color: #a7a7a7;
+
+      cursor: pointer;
+    }
+
+    .tab:hover {
+      color: $colorHover;
+    }
+
+    .active-tab {
+      color: $colorDefault;
+      position: relative;
+    }
+
+    .active-tab::before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translate(-50%);
+      width: calc(100%);
+      height: 2px;
+      background-color: $colorDefault;
+    }
+  }
+
+  .view {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 1px solid $colorBlack;
+    border-right: 1px solid $colorBlack;
+    border-bottom: 1px solid $colorBlack;
+
+    height: 540px;
+    overflow: auto;
+
+    display: grid;
+    place-items: center;
+
+    .view-map {
+      table {
+        margin: 10px;
+        border-collapse: collapse;
+        border: 1px solid $colorBlack;
+        td {
+          border: 1px solid $colorBlack;
+          font-size: 13px;
+          text-align: center;
+          min-width: 40px;
+          height: 40px;
+        }
+
+        .location {
+          background-color: $cell_status_0;
+          cursor: pointer;
+        }
+
+        .has-product {
+          background-color: $cell_status_1;
+          cursor: pointer;
+        }
+
+        .has-product-search {
+          background-color: $cell_status_2;
+          cursor: pointer;
+        }
+
+        .has-export {
+          background-color: $cell_status_3;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

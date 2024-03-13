@@ -1,0 +1,208 @@
+:root {
+  --modal-header__height: 30px;
+  --modal-body__sidebar__width: 250px;
+  --warehouse-container__height: 125px;
+  --main-content__action_height: 45px;
+}
+
+.dialog-container {
+  position: fixed;
+  z-index: 8;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+.dialog-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 15px;
+  border-radius: 6px;
+
+  overflow: auto;
+
+  background-color: #fefefe;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s;
+}
+
+// start hiệu ứng cho dialog
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+// end hiệu ứng dialog
+
+.modal-content {
+  // margin: 3px;
+  // height: calc(100% - 6px); // trừ 5 px trên đưới
+  border-radius: 6px;
+  height: 100%;
+}
+
+.close {
+  color: rgb(219, 219, 219);
+  float: right;
+  margin-right: 5px;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  box-sizing: border-box;
+  height: var(--modal-header__height);
+}
+
+.modal-body {
+  width: 100%;
+  height: calc(100% - var(--modal-header__height) - 5px);
+  box-sizing: border-box;
+
+  display: flex;
+}
+
+.modal-body__sidebar {
+  width: var(--modal-body__sidebar__width);
+  height: 100%;
+  background-color: #f0eeee;
+  margin-left: 5px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.warehouse-container {
+  height: var(--warehouse-container__height);
+  :last-child {
+    margin-bottom: 0;
+  }
+  .warehouse-container__input {
+    display: flex;
+    margin-bottom: 5px;
+    label {
+      min-width: 70px;
+    }
+    input {
+      flex: 1;
+    }
+  }
+}
+
+.area-container {
+  height: calc(100% - var(--warehouse-container__height));
+
+  display: flex;
+  flex-direction: column;
+
+  .area-container__action {
+    margin-bottom: 5px;
+  }
+  .area-container__view {
+    flex: 1;
+    overflow: auto;
+    .area-element {
+      box-sizing: border-box;
+      padding: 5px;
+      background-color: white;
+      margin: 3px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+.modal-body__main-content {
+  margin: 0 5px 0 5px;
+  width: calc(100% - var(--modal-body__sidebar__width) - 15px);
+  height: 100%;
+  .main-content__view {
+    background-color: #f0eeee;
+    margin-bottom: 5px;
+    height: calc(100% - var(--main-content__action_height) - 5px);
+    border-radius: 5px;
+    overflow: auto;
+    table {
+      border-collapse: collapse;
+      border: 1px solid black;
+      margin: 20px;
+      td {
+        border: 1px solid black;
+        font-size: 13px;
+        text-align: center;
+        min-width: 50px;
+        height: 50px;
+        cursor: pointer;
+      }
+    }
+  }
+  .main-content__action {
+    height: var(--main-content__action_height);
+    width: 100%;
+    background-color: #f0eeee;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 6px;
+    box-sizing: border-box;
+    .button--save {
+      padding: 0 20px;
+    }
+  }
+}
